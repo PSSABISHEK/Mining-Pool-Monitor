@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MetaphoricalSheep.Mpos.Api;
 
 namespace MiningPoolMonitor
 {
@@ -23,6 +24,16 @@ namespace MiningPoolMonitor
         public MainWindow()
         {
             InitializeComponent();
+
+            var client = new Client("https://vtc.suprnova.cc");
+            var response = client.Public();
+            
+            getdata.Content = response.Workers;
+        }
+
+        private void getstats(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

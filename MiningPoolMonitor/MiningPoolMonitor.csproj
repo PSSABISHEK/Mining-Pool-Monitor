@@ -34,8 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -58,6 +62,44 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Api\Actions.cs" />
+    <Compile Include="Api\Client.cs" />
+    <Compile Include="Api\Models\Balance.cs" />
+    <Compile Include="Api\Models\Block.cs" />
+    <Compile Include="Api\Models\BlockStats.cs" />
+    <Compile Include="Api\Models\Dashboard.cs" />
+    <Compile Include="Api\Models\HourlyHashrates.cs" />
+    <Compile Include="Api\Models\InternalHashrate.cs" />
+    <Compile Include="Api\Models\NavbarData.cs" />
+    <Compile Include="Api\Models\PoolInfo.cs" />
+    <Compile Include="Api\Models\PoolStatus.cs" />
+    <Compile Include="Api\Models\TopContributors.cs" />
+    <Compile Include="Api\Models\UserStatus.cs" />
+    <Compile Include="Api\Models\UserTransactions.cs" />
+    <Compile Include="Api\Models\Worker.cs" />
+    <Compile Include="Api\Responses\AuthenticatedResponse.cs" />
+    <Compile Include="Api\Responses\GetBlockCountResponse.cs" />
+    <Compile Include="Api\Responses\GetBlocksFoundResponse.cs" />
+    <Compile Include="Api\Responses\GetBlockStatsResponse.cs" />
+    <Compile Include="Api\Responses\GetCurrentWorkersResponse.cs" />
+    <Compile Include="Api\Responses\GetDashboardDataResponse.cs" />
+    <Compile Include="Api\Responses\GetDifficultyResponse.cs" />
+    <Compile Include="Api\Responses\GetEstimatedTimeResponse.cs" />
+    <Compile Include="Api\Responses\GetHourlyHashratesResponse.cs" />
+    <Compile Include="Api\Responses\GetNavbarDataResponse.cs" />
+    <Compile Include="Api\Responses\GetPoolHashrateResponse.cs" />
+    <Compile Include="Api\Responses\GetPoolInfoResponse.cs" />
+    <Compile Include="Api\Responses\GetPoolShareRateResponse.cs" />
+    <Compile Include="Api\Responses\GetPoolStatusResponse.cs" />
+    <Compile Include="Api\Responses\GetTimeSinceLastBlockResponse.cs" />
+    <Compile Include="Api\Responses\GetTopContributorsResponse.cs" />
+    <Compile Include="Api\Responses\GetUserBalanceResponse.cs" />
+    <Compile Include="Api\Responses\GetUserHashrateResponse.cs" />
+    <Compile Include="Api\Responses\GetUserShareRateResponse.cs" />
+    <Compile Include="Api\Responses\GetUserStatusResponse.cs" />
+    <Compile Include="Api\Responses\GetUserTransactionsResponse.cs" />
+    <Compile Include="Api\Responses\GetUserWorkersResponse.cs" />
+    <Compile Include="Api\Responses\Public.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -85,6 +127,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -92,6 +135,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Api\Api.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
