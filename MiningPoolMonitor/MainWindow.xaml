@@ -5,11 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MiningPoolMonitor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Mining Pool Monitor" MinHeight="350" MinWidth="350" Height="350" Width="350" SizeChanged="Window_SizeChanged">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="42,34,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="172"/>
-        <Label x:Name="getdata" Content="" HorizontalAlignment="Left" Height="82" Margin="42,180,0,0" VerticalAlignment="Top" Width="430"/>
-        <Button Content="Get" HorizontalAlignment="Left" Height="27" Margin="394,282,0,0" VerticalAlignment="Top" Width="113" Click="getstats"/>
+
+        <Button x:Name="ConfigureButton" Content="Configure" HorizontalAlignment="Right" Margin="5,5" VerticalAlignment="Bottom" Width="100" Click="ConfigureButton_Click"/>
+        <Button x:Name="RefreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="5,5" VerticalAlignment="Bottom" Width="100" Click="RefreshButton_Click"/>
+        <TabControl x:Name="MainTab" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TabItem Header="Dashboard">
+                <Grid Background="#FFE5E5E5">
+                    <Label x:Name="TotalHashRateLabel" Content="Hashrate:" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Width="114"/>
+                    <Label x:Name="ShareRateLabel" Content="Sharerate:" HorizontalAlignment="Left" Height="26" Margin="20,36,0,0" VerticalAlignment="Top" Width="152"/>
+                    <Label x:Name="UnconfirmedLabel" Content="Unconfirmed:" HorizontalAlignment="Left" Margin="20,85,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="ConfirmedLabel" Content="Confirmed:" HorizontalAlignment="Left" Margin="20,111,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="OrphanedLabel" Content="Orphaned:" HorizontalAlignment="Left" Margin="22,137,0,0" VerticalAlignment="Top"/>
+
+                    <Label x:Name="ShareRate" Content="Sharerate" HorizontalAlignment="Left" Height="26" Margin="187,36,-3,0" VerticalAlignment="Top" Width="152"/>
+                    <Label x:Name="TotalHashrate" Content="Hashrate" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" Width="114"/>
+                    <Label x:Name="Unconfirmed" Content="Unconfirmed" HorizontalAlignment="Left" Margin="187,85,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="Confirmed" Content="Confirmed" HorizontalAlignment="Left" Margin="187,111,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="Orphaned" Content="Orphaned" HorizontalAlignment="Left" Margin="189,137,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="BalancesLabel" Content="Balances:" HorizontalAlignment="Left" Margin="20,62,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Public">
+                <Grid Background="#FFE5E5E5">
+                    <Label x:Name="PoolNameLabel" Content="Pool Name:" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Width="114"/>
+                    <Label x:Name="PublicHashRateLabel" Content="Hash Rate:" HorizontalAlignment="Left" Height="26" Margin="20,36,0,0" VerticalAlignment="Top" Width="152"/>
+                    <Label x:Name="WorkersLabel" Content="Workers:" HorizontalAlignment="Left" Margin="20,62,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="LastBlockLabel" Content="Last Block:" HorizontalAlignment="Left" Margin="20,88,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="NetworkHashrateLabel" Content="Network Hashrate:" HorizontalAlignment="Left" Margin="20,114,0,0" VerticalAlignment="Top"/>
+
+                    <Label x:Name="PoolName" Content="PoolName" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" Width="114"/>
+                    <Label x:Name="HashRate" Content="HashRate" HorizontalAlignment="Left" Height="26" Margin="187,36,-3,0" VerticalAlignment="Top" Width="152"/>
+                    <Label x:Name="Workers" Content="Workers" HorizontalAlignment="Left" Margin="187,62,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="LastBlock" Content="LastBlock" HorizontalAlignment="Left" Margin="187,88,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="NetworkHashrate" Content="NetworkHashrate" HorizontalAlignment="Left" Margin="187,114,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        
 
     </Grid>
 </Window>
