@@ -27,7 +27,19 @@
                     <Label x:Name="BalancesLabel" Content="Balances:" HorizontalAlignment="Left" Margin="20,62,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
-
+            <TabItem Header="Workers">
+                <Grid Background="#FFE5E5E5">
+                    <ListView Name="WorkersList">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Worker" DisplayMemberBinding="{Binding Username}" />
+                                <GridViewColumn Header="Hashrate" DisplayMemberBinding="{Binding Hashrate}" />
+                                <GridViewColumn Header="Difficulty" DisplayMemberBinding="{Binding Difficulty}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
             <TabItem Header="Public">
                 <Grid Background="#FFE5E5E5">
                     <Label x:Name="PoolNameLabel" Content="Pool Name:" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Width="114"/>

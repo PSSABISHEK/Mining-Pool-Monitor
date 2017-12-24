@@ -52,6 +52,7 @@ namespace MiningPoolMonitor
 
                 PopulatePublicTab(client);
                 PopulateDashboardTab(client);
+                PopulateWorkerTab(client);
 
 
             }catch(Exception e)
@@ -60,6 +61,13 @@ namespace MiningPoolMonitor
             }
             
 
+        }
+
+        private void PopulateWorkerTab(Client client)
+        {
+            client.ApiKey = Properties.Settings.Default.API_Key;
+            var WorkerResponse = client.GetUserWorkers();
+            WorkersList.ItemsSource = WorkerResponse.Response.Data;
         }
 
         private void PopulateDashboardTab(Client client)
