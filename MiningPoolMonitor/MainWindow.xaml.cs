@@ -67,8 +67,7 @@ namespace MiningPoolMonitor
             client.ApiKey = Properties.Settings.Default.API_Key;
             var DashboardResponse = client.GetDashboardData();
 
-            
-
+           
             TotalHashrate.Content = DashboardResponse.Response.Data.Personal.Hashrate;
             ShareRate.Content = DashboardResponse.Response.Data.Personal.ShareRate;
 
