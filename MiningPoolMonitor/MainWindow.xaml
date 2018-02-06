@@ -8,8 +8,8 @@
         Title="Mining Pool Monitor" MinHeight="350" MinWidth="350" Height="350" Width="350" SizeChanged="Window_SizeChanged">
     <Grid>
 
-        <Button x:Name="ConfigureButton" Content="Configure" HorizontalAlignment="Right" Margin="5,5" VerticalAlignment="Bottom" Width="100" Click="ConfigureButton_Click"/>
-        <Button x:Name="RefreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="5,5" VerticalAlignment="Bottom" Width="100" Click="RefreshButton_Click"/>
+        <Button x:Name="ConfigureButton" Content="Configure" HorizontalAlignment="Right" Margin="0,0,30,67.8" VerticalAlignment="Bottom" Width="130" Click="ConfigureButton_Click"/>
+        <Button x:Name="RefreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="29,0,0,67.8" VerticalAlignment="Bottom" Width="130" Click="RefreshButton_Click"/>
         <TabControl x:Name="MainTab" HorizontalAlignment="Left" VerticalAlignment="Top">
             <TabItem Header="Dashboard">
                 <Grid Background="#FFE5E5E5">
@@ -56,7 +56,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        
+
 
     </Grid>
 </Window>
